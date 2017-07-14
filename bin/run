@@ -1,0 +1,25 @@
+require_relative 'cli.rb'
+require_relative 'session.rb'
+
+continue_library = true
+
+while continue_library
+	welcome
+	user = visited?
+	sess = Session.new(user)
+
+	continue = true
+
+	while continue
+		repeat ||= false
+		sess.display_top_menu(repeat)
+		continue = continue_session?(user.name)
+		repeat = true
+	end
+	repeat = false
+	continue_library = continue_library?
+end
+
+
+
+
