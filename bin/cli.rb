@@ -74,12 +74,12 @@ def continue_session?(name)
 end
 
 def continue_library?
-	puts "Would you like to leave the library? (y/n)"
+	puts "Would you like to continue using the library? (y/n)"
 	choice = gets.strip.downcase
 	if choice == 'y'
-		false
-	elsif choice == 'n'
 		true
+	elsif choice == 'n'
+		false
 	else
 		puts "Sorry I didn't understand that. Please try again."
 		sleep(1)

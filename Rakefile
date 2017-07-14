@@ -22,14 +22,12 @@ end
  
 task console: :environment do
 
-	UserBook.destroy_all
-	Author.destroy_all
-	Book.destroy_all
-	Category.destroy_all
-	User.destroy_all
+	binding.pry
+end
 
+task repopulate: :environment do
 
-	mura = Author.create(name: "Haruki Murakami")
+		mura = Author.create(name: "Haruki Murakami")
 	kafka = Author.create(name: "Franz Kafka")
 	bryson = Author.create(name: "Bill Bryson")
 	diamond = Author.create(name: "Jared Diamond")
@@ -50,5 +48,12 @@ task console: :environment do
 	meryl = User.create(name: "Meryl")
 
 
-	binding.pry
+end
+
+task destroy: :environment do
+	UserBook.destroy_all
+	Author.destroy_all
+	Book.destroy_all
+	Category.destroy_all
+	User.destroy_all
 end
